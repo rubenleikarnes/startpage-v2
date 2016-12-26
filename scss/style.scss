@@ -1,0 +1,95 @@
+// Starpage v2
+@import "normalize.scss";
+
+html {
+	-webkit-box-sizing: border-box; 
+	-moz-box-sizing: border-box; 
+	box-sizing: border-box;
+}
+
+*, *:before, *:after {
+	box-sizing: inherit;
+}
+
+$black: #232323;
+$white: #efefef;
+
+body {
+	font-size: 1.7rem;
+	font-family: sans-serif;
+	background: #eee;
+	margin: auto;
+}
+
+.container {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: center;
+	align-content: center;
+
+	height: 100vh;
+	overflow: visible;
+	margin: auto 5%;
+	max-width: 1900px;
+}
+
+a {
+	flex-direction: row;
+	align-self: center;
+	
+	display: block;
+	width: 15%;
+	min-width: 200px;
+	padding-top: 5%;
+	padding-bottom: 5%;
+	margin: 1rem;
+	
+	background: $black;
+	text-decoration: none;
+	text-align: center;
+	font-weight: bold;
+	color: #dedede;
+	
+	&:hover {
+		background: lighten($black, 2.5%);
+	}
+}
+
+$webpages: (
+	facebook: #3c5a96,
+	gmail: #d74a38,
+	keep: #f5b600,
+	twitter: #55acee,
+	github: #5aad35,
+	hn: #f07421,
+	dn: #2d72d9,
+	reddit: #cee3f8,
+	theverge: #f64634,
+	kampanje: #e2e2e2,
+	esreality: #dc5300,
+	liquipedia: #9ebb81,
+	hltv: #2d6ca2,
+	twitch: #6441a5,
+	youtube: #db2230
+);
+
+@function contrast-color($bg-color, $dark-color:$black, $light-color:$white, $threshold:70) {
+	@if (lightness($bg-color) > $threshold) {
+		@return $dark-color;
+	}
+	@else {
+		@return $light-color;
+	}
+}
+
+@each $page, $color in $webpages {
+	.#{$page} {
+		color: $color;
+
+		&:hover {
+			background-color: $color;
+			color: contrast-color($color);
+		}
+	}
+}
