@@ -16,9 +16,13 @@ $white: #efffef;
 
 body {
 	font-size: 1.7rem;
-	font-family: sans-serif;
 	background: #eee;
 	margin: auto;
+	font-family:-apple-system, BlinkMacSystemFont, "San Francisco", "Helvetica Neue", Helvetica, Ubuntu, Roboto, Noto, "Segoe UI", Arial, sans-serif;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	font-smoothing: antialiased;
+	text-rendering: optimizeLegibility;
 }
 
 .container {
@@ -41,8 +45,8 @@ a {
 	display: block;
 	width: 15%;
 	min-width: 200px;
-	padding-top: 5%;
-	padding-bottom: 5%;
+	padding-top: 5rem;
+	padding-bottom: 5rem;
 	margin: 1rem;
 	
 	background: $black;
@@ -51,6 +55,12 @@ a {
 	font-weight: bold;
 	color: #dedede;
 	
+	transition: 0.15s ease-in background;
+	-webkit-text-decoration-skip: ink;
+	text-decoration-skip: ink;
+	text-decoration-skip-ink: auto;
+
+
 	&:hover {
 		background: lighten($black, 2.5%);
 	}
