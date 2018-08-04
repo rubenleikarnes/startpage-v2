@@ -1,5 +1,4 @@
 // Starpage v2
-@import "normalize.scss";
 
 html {
 	-webkit-box-sizing: border-box; 
@@ -11,13 +10,17 @@ html {
 	box-sizing: inherit;
 }
 
-$black: #232323;
+$black: #282828;
 $white: #efffef;
+$link-color: #dedede;
 
 body {
 	font-size: 1.7rem;
-	background: #eee;
+	// background: #eee;
+	background: $black;
 	margin: auto;
+	height: 100vh;
+	display: flex;
 	font-family:-apple-system, BlinkMacSystemFont, "San Francisco", "Helvetica Neue", Helvetica, Ubuntu, Roboto, Noto, "Segoe UI", Arial, sans-serif;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
@@ -26,36 +29,37 @@ body {
 }
 
 .container {
-	display: flex;
-	flex-wrap: wrap;
-	justify-content: center;
-	align-items: center;
-	align-content: center;
-
-	height: 100vh;
-	overflow: visible;
 	margin: auto;
-	max-width: 1900px;
+	width: 85%;
+	display: grid; 
+	grid-gap: 2rem;
+	grid-template-columns: repeat(5, 1fr);
+
+	@media screen and (max-width: 1200px) {
+		grid-gap: 1.5rem;
+		width: 95%;
+		grid-template-columns: repeat(4, 1fr);
+	}
+
+	@media screen and (max-width: 768px) {
+		grid-gap: 1rem;
+		width: 95%;
+		grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));	
+	}
 }
 
-a {
-	flex-direction: row;
-	align-self: center;
-	
-	display: block;
-	width: 15%;
-	min-width: 200px;
-	padding-top: 5rem;
-	padding-bottom: 5rem;
-	margin: 1rem;
-	
-	background: $black;
-	text-decoration: none;
+a {	
+	padding: 75px 0;
 	text-align: center;
-	font-weight: bold;
-	color: #dedede;
 	
-	transition: 0.15s ease-in background;
+	color: $link-color;
+	background: lighten($black, 3%);
+	text-decoration: none;
+	font-weight: bold;
+	border-radius: 3px;
+	
+	transition: 0.2s ease-in background;
+	transition: 0.1s ease-in color;
 	-webkit-text-decoration-skip: ink;
 	text-decoration-skip: ink;
 	text-decoration-skip-ink: auto;
@@ -67,17 +71,16 @@ a {
 }
 
 $webpages: (
-	facebook: #3c5a96,
 	gmail: #d74a38,
 	keep: #f5b600,
-	nrk: #1fbaef,
 	github: #5aad35,
+	nrk: #1fbaef,
+	kampanje: #e2e2e2,
 	hn: #f07421,
-	dn: #2d72d9,
 	lobsters: #fc0d1b,
 	reddit: #cee3f8,
 	theverge: #f64634,
-	kampanje: #e2e2e2,
+	dn: #2d72d9,
 	esreality: #dc5300,
 	liquipedia: #9ebb81,
 	hltv: #2d6ca2,
