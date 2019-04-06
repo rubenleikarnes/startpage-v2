@@ -7,8 +7,8 @@ I've never liked the default chrome startpage (new tab), so i created my own. Yo
 
 Remember to add inline css after local development, compile sass with this command:
 
-´´´bash
+```bash
 sass --style compressed --watch scss/style.scss:css/style.css
-´´´
+``
 
 ![Screenshot of extension](screenshot.png)
