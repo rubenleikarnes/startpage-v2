@@ -3,7 +3,7 @@
   "name": "New tab speeddial v2",
   "short_name": "NTSpeed2",
   "description": "Personal new tab page v2",
-  "version": "2.1.3",
+  "version": "2.2.0",
   "chrome_url_overrides": {
   	"newtab": "index.html"
   },

@@ -10,13 +10,11 @@ html {
 	box-sizing: inherit;
 }
 
-$black: #282828;
+$black: #323639;
 $white: #efffef;
-$link-color: #dedede;
 
 body {
 	font-size: 1.7rem;
-	// background: #eee;
 	background: $black;
 	margin: auto;
 	height: 100vh;
@@ -45,6 +43,7 @@ body {
 		grid-gap: 1rem;
 		width: 95%;
 		grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));	
+		font-size: 1.25rem;
 	}
 }
 
@@ -52,18 +51,17 @@ a {
 	padding: 25% 0;
 	text-align: center;
 	
-	color: $link-color;
-	background: lighten($black, 3%);
+	color: $white;
+	background: darken($black, 2%);
+	border: 1px solid darken($black, 3.5%);
 	text-decoration: none;
 	font-weight: bold;
 	border-radius: 3px;
 	
-	transition: 0.2s ease-in background;
-	transition: 0.1s ease-in color;
+	transition: 0.1s ease-in all;
 	-webkit-text-decoration-skip: ink;
 	text-decoration-skip: ink;
 	text-decoration-skip-ink: auto;
-
 
 	&:hover {
 		background: lighten($black, 2.5%);
@@ -75,12 +73,12 @@ $webpages: (
 	keep: #f5b600,
 	github: #5aad35,
 	nrk: #1fbaef,
+	fastmail: #1a71ae,
 	kampanje: #e2e2e2,
 	hn: #f07421,
 	lobsters: #fc0d1b,
 	reddit: #cee3f8,
 	theverge: #f64634,
-	dn: #2d72d9,
 	esreality: #dc5300,
 	liquipedia: #9ebb81,
 	hltv: #2d6ca2,
@@ -102,6 +100,7 @@ $webpages: (
 		color: $color;
 
 		&:hover {
+			border-color: darken($color, 10%);
 			background-color: $color;
 			color: contrast-color($color);
 		}
