@@ -9,6 +9,6 @@ Remember to add inline css after local development, compile sass with this comma
 
 ```bash
 sass --style compressed --watch scss/style.scss:css/style.css
-``
+```
 
 ![Screenshot of extension](screenshot.png)
